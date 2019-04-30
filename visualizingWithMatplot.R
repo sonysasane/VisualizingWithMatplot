@@ -38,6 +38,27 @@ is.matrix(v2)
 #accessing all rows and a column
 v3<- Games[,4]
 v3
+
+
+#Qplot
+
+stats <- read.csv("DemographicData.csv")
+head(stats)
+?qplot
+install.packages("ggplot2")
+library(ggplot2)
+qplot(data = stats, x = Internet.users)
+qplot(data =stats, x = Income.Group, y = Birth.rate)
+qplot(data =stats, x = Income.Group, y = Birth.rate, size= I(3))
+qplot(data =stats, x = Income.Group, y = Birth.rate, size= I(3), color = I("blue"))
+
+
+qplot(data =stats, x = Income.Group, y = Birth.rate, geom = "boxplot")
+
+#visualizing birth rate and internet users
+
+qplot(data = stats, x = Internet.users, y= Birth.rate, color = Income.Group , size = I(3))
+
 is.matrix(v3)
 #it is a vector
 v4<- Games[,4,drop=F]
